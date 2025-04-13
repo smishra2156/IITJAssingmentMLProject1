@@ -7,18 +7,16 @@ import numpy as np
 # Title
 st.title("Diabetes Prediction App")
 st.write("Enter health information to predict the likelihood of diabetes.")
-"""
 # Download the pipeline if not already downloaded
-file_path = "diabetes_pipeline.pkl"
-if not os.path.exists(file_path):
-    st.info("Downloading model file...")
-    url = "https://drive.google.com/uc?id=1aE_daexQbhtTrtFBThxK1_ytCvGaKn_i"  # due to size issue uploaded file on my google drive
-    gdown.download(url, file_path, quiet=False)
-"""
+#file_path = "diabetes_pipeline.pkl"
+#if not os.path.exists(file_path):
+ #   st.info("Downloading model file...")
+#    url = "https://drive.google.com/uc?id=1aE_daexQbhtTrtFBThxK1_ytCvGaKn_i"  # due to size issue uploaded file on my google drive
+#    gdown.download(url, file_path, quiet=False)
 # Load the pipeline
 try:
     #pipeline = joblib.load(file_path) scaler
-    pipeline = joblib.load("scaler.pkl")
+    pipeline = joblib.load("scaler1.pkl")
     st.success("Model loaded successfully.")
 except Exception as e:
     st.error(f"Failed to load model: {e}")
