@@ -4,3 +4,4 @@ joblib
 gdown
 numpy
 pandas
+pickle
