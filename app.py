@@ -36,8 +36,6 @@ with st.form("health_form"):
     Stroke = st.selectbox("Have you ever had a stroke?", ["No", "Yes"])
     HeartDiseaseorAttack = st.selectbox("Do you have coronary heart disease or myocardial infarction?", ["No", "Yes"])
     PhysActivity = st.selectbox("Have you exercised in the past 30 days?", ["No", "Yes"])
-    Fruits = st.selectbox("Do you consume fruit at least once per day?", ["No", "Yes"])
-    Veggies = st.selectbox("Do you consume vegetables at least once per day?", ["No", "Yes"])
     HvyAlcoholConsump = st.selectbox("Do you consume more than 14 drinks/week (men) or 7/week (women)?", ["No", "Yes"])
     AnyHealthcare = st.selectbox("Do you have any form of healthcare coverage?", ["No", "Yes"])
     NoDocbcCost = st.selectbox("Was there a time you could not see a doctor due to cost?", ["No", "Yes"])
@@ -47,8 +45,6 @@ with st.form("health_form"):
     DiffWalk = st.selectbox("Do you have serious difficulty walking or climbing stairs?", ["No", "Yes"])
     Sex = st.selectbox("What is your sex?", ["Male", "Female"])
     Age = st.slider("Age Category", min_value=1, max_value=13, value=7, help="1=18-24, 13=80+")
-    Education = st.slider("Education Level", min_value=1, max_value=6, value=4, help="1=Never attended, 6=College graduate")
-    Income = st.slider("Income Level", min_value=1, max_value=8, value=4, help="1=Less than $10,000, 8=$75,000 or more")
 
     submitted = st.form_submit_button("Submit")
 
@@ -66,8 +62,6 @@ if submitted:
         yn_to_binary(Stroke),
         yn_to_binary(HeartDiseaseorAttack),
         yn_to_binary(PhysActivity),
-        yn_to_binary(Fruits),
-        yn_to_binary(Veggies),
         yn_to_binary(HvyAlcoholConsump),
         yn_to_binary(AnyHealthcare),
         yn_to_binary(NoDocbcCost),
@@ -77,8 +71,6 @@ if submitted:
         yn_to_binary(DiffWalk),
         sex_to_binary(Sex),
         Age,
-        Education,
-        Income
     ]])
 
     st.write("### Input Array for Model:")
